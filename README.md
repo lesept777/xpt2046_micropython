@@ -28,7 +28,7 @@ On Windows:
 ```
 Finalyy, unplug and plug the device.
 
-This driver is based on the original version from [rdagger](https://github.com/rdagger/micropython-ili9341/blob/d080d5bac95c0da972b26e3599f56bb0311d9ebd/xpt2046.py). The calibration is quite simple (and can be improved in the future).
+*This driver is based on the original version from [rdagger](https://github.com/rdagger/micropython-ili9341/blob/d080d5bac95c0da972b26e3599f56bb0311d9ebd/xpt2046.py). The calibration is quite simple (and can be improved in the future).*
 
 # Methods
 First, a SPI bus must be created.
@@ -62,7 +62,7 @@ are fairly good. Then:
     xpt = Touch(spi, cs=cs, int_pin=int_pin)
     xpt.calibrate(xmin, xmax, ymin, ymax, width, height, orientation)
 ```
-Note that here, width is the largest value and height is the lowest one. So, independently of the orientation of the display, on the T-HMI 320 x 240 display, you have either:
+Note that here, width is the `largest` value and `height` is the lowest one. So, *independently of the orientation of the display*, on the T-HMI 320 x 240 display, you have either:
 ```
 xpt.calibrate(150, 1830, 150, 1830, 320, 240, 0)
 ```
