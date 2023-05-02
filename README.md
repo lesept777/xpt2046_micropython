@@ -24,7 +24,7 @@ int_pin = Pin(9)
 ```
 
 ## raw_touch
-Provides the raw values from the device, without any reference to the display size. The origin is in the lower right corner. This is only use in the calibration script, but you may not want to use it.
+Provides the raw values from the device, without any reference to the display size. The origin is in the lower right corner. This is only used in the calibration script, but you may not want to use it.
 ```
 x, y = xpt.raw_touch()
 ```
