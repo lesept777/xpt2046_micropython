@@ -1,7 +1,32 @@
 # xpt2046_micropython
 ## Micropython drive for XPT2046 touch, especially for Lilygo T-HMI device
 
-For T-HMI, use the firmware from [russhughes](https://github.com/russhughes/s3lcd/tree/c666663ea9ce005ca8271c470c389054274f0192/firmware/S3LCD_OCT_16M)
+For T-HMI, use the firmware from [russhughes](https://github.com/russhughes/s3lcd/tree/c666663ea9ce005ca8271c470c389054274f0192/firmware/S3LCD_OCT_16M). Flashing instructions:
+
+Place device into flash mode by pressing and holding the BOOT button, then press and release the RESET button and finally release the BOOT button.
+
+### Erase flash
+
+On Linux:
+```
+esptool.py --chip esp32s3 --port /dev/ttyACM0 erase_flash
+```
+On Windows:
+```
+./python.exe -u -m esptool --chip ESP32S3 --port COM27 erase_flash
+```
+
+### Flash firmware
+
+On Linux:
+```
+esptool.py --chip esp32s3 --port /dev/ttyACM0 write_flash -z 0 firmware.bin
+```
+On Windows:
+```
+/python.exe -u -m esptool --chip ESP32S3 --port COM27 --baud 460800 write_flash -z 0x0 firmware.bin
+```
+Foinalyy, unplug and plug the device.
 
 This driver is based on the original version from [rdagger](https://github.com/rdagger/micropython-ili9341/blob/d080d5bac95c0da972b26e3599f56bb0311d9ebd/xpt2046.py). The calibration is quite simple (and can be improved in the future).
 
