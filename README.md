@@ -55,9 +55,9 @@ Returns `True` if the display was touched or `False` otherwise.
 ## set_orientation()
 Used to change the orientation of the display. Values are the same as russhugjes's:
 
-      Index | Rotation
-      ----- | --------
-      0     | Portrait (0 degrees)
-      1     | Landscape (90 degrees)
-      2     | Reverse Portrait (180 degrees)
-      3     | Reverse Landscape (270 degrees)
+Index | Rotation
+----- | --------
+0     | Portrait (0 degrees)
+1     | Landscape (90 degrees)
+2     | Reverse Portrait (180 degrees)
+3     | Reverse Landscape (270 degrees)
