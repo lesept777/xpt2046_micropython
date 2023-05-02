@@ -5,8 +5,11 @@ from machine import SPI, Pin
 from xpt2046 import Touch
 from time import sleep
 
+t_x,t_y = 0,0
 def int_handler(x,y):
-    print(f'int: {x}, {y}')
+    global t_x,t_y
+    t_x = x
+    t_y = y
 
 spi = SPI(1, baudrate=1000000)
 spi.init(sck=Pin(01), mosi=Pin(03), miso=Pin(04))
@@ -37,7 +40,9 @@ try:
     tft.show()
 
     while True:
-        sleep(0.1)
+        if xpt.is_touched():
+            print(t_x,t_y)
+        sleep(0.05)
         
 finally:
     tft.deinit()
