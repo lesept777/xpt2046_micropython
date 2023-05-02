@@ -52,6 +52,17 @@ are fairly good.
 ## is_touched()
 Returns `True` if the display was touched or `False` otherwise.
 
+# Examples
+## Calibration.py
+Use this to get the calibration values for your touch device. Change the orientation value in line 17 as desired.
+
+## Touch_test.py
+A simple example of how to use the driver. It is based on calibration values for my T-HMI: change the lines 22-25 accroding to the values provided by the above script.
+
+## Touch_test_interrupt.py
+Similar but using the interrupt to get the coordinates.
+
+
 ## set_orientation()
 Used to change the orientation of the display. Argument values are the same as russhugjes's:
 
