@@ -5,9 +5,6 @@ from machine import SPI, Pin
 from xpt2046 import Touch
 from time import sleep
 
-def int_handler(x,y):
-    print(f'int: {y}, {240-x}')
-
 spi = SPI(1, baudrate=1000000)
 spi.init(sck=Pin(01), mosi=Pin(03), miso=Pin(04))
 print('ok SPI')
@@ -28,7 +25,7 @@ try:
     ymin = 150
     ymax = 1830
     orientation = 1
-    xpt = Touch(spi, cs=cs, int_pin=int_pin)#, int_handler=int_handler)
+    xpt = Touch(spi, cs=cs, int_pin=int_pin)
     xpt.calibrate(xmin, xmax, ymin, ymax, width, height, orientation)
 
     tft.fill(s3lcd.WHITE)
