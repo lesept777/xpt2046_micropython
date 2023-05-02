@@ -18,3 +18,46 @@ Declare the touch device
 ```
 xpt = Touch(spi, cs=cs, int_pin=int_pin)
 ```
+The `int_pin` argument is mandatory. For T-HMI, use:
+```
+int_pin = Pin(9)
+```
+
+## raw_touch
+Provides the raw values from the device, without any reference to the display size. The origin is in the lower right corner. This is only use in the calibration script, but you may not want to use it.
+```
+x, y = xpt.raw_touch()
+```
+
+## get_touch
+Provides the x and y coordinates using the display reference. The origin is in the upper left corner.
+```
+x, y = xpt.get_touch()
+```
+This method can only be used after calling the `calibrate()` method. Depending on the calibration accuracy, it can provide negative coordinates or coordinates higher than the size of the display. An optional argument is used to clip the provided values to the display size:
+```
+x, y = xpt.get_touch(True)
+```
+
+## calibrate()
+Arguments are: xmin, xmax, ymin, ymax, width, height, orientation. Use the `Calibration.py` script to get the values. On my T-HMI device, I found that
+```
+    xmin = 150
+    xmax = 1830
+    ymin = 150
+    ymax = 1830
+```
+are fairly good.
+
+## is_touched()
+Returns `True` if the display was touched or `False` otherwise.
+
+## set_orientation()
+Used to change the orientation of the display. Values are the same as russhugjes's:
+
+      Index | Rotation
+      ----- | --------
+      0     | Portrait (0 degrees)
+      1     | Landscape (90 degrees)
+      2     | Reverse Portrait (180 degrees)
+      3     | Reverse Landscape (270 degrees)
