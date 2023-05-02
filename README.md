@@ -49,10 +49,18 @@ The `int_pin` argument is mandatory. For T-HMI, use:
 int_pin = Pin(9)
 ```
 
-## raw_touch
-Provides the raw values from the device, without any reference to the display size. The origin is in the lower right corner. This is only used in the calibration script, but you may not want to use it.
+## calibrate
+Arguments are: xmin, xmax, ymin, ymax, width, height, orientation. Use the `Calibration.py` script to get the values. On my T-HMI device, I found that
 ```
-x, y = xpt.raw_touch()
+    xmin = 150
+    xmax = 1830
+    ymin = 150
+    ymax = 1830
+```
+are fairly good. Then:
+```
+    xpt = Touch(spi, cs=cs, int_pin=int_pin)
+    xpt.calibrate(xmin, xmax, ymin, ymax, width, height, orientation)
 ```
 
 ## get_touch
@@ -64,16 +72,6 @@ This method can only be used after calling the `calibrate()` method. Depending o
 ```
 x, y = xpt.get_touch(True)
 ```
-
-## calibrate
-Arguments are: xmin, xmax, ymin, ymax, width, height, orientation. Use the `Calibration.py` script to get the values. On my T-HMI device, I found that
-```
-    xmin = 150
-    xmax = 1830
-    ymin = 150
-    ymax = 1830
-```
-are fairly good.
 
 ## is_touched()
 Returns `True` if the display was touched or `False` otherwise.
@@ -87,6 +85,12 @@ Index | Rotation
 1     | Landscape (90 degrees)
 2     | Reverse Portrait (180 degrees)
 3     | Reverse Landscape (270 degrees)
+
+## raw_touch
+Provides the raw values from the device, without any reference to the display size. The origin is in the lower right corner. This is only used in the calibration script, but you may not want to use it.
+```
+x, y = xpt.raw_touch()
+```
 
 # Examples
 ## Calibration.py
