@@ -71,7 +71,7 @@ or
 xpt.calibrate(150, 1830, 150, 1830, 320, 240, 1)
 ```
 
-## get_touch
+## get_touch()
 Provides the x and y coordinates using the display reference. The origin is in the upper left corner.
 ```
 x, y = xpt.get_touch()
@@ -84,7 +84,7 @@ x, y = xpt.get_touch(True)
 ## is_touched()
 Returns `True` if the display was touched or `False` otherwise.
 
-## set_orientation()
+## set_orientation
 Used to change the orientation of the display. Argument values are the same as russhugjes's:
 
 Index | Rotation
@@ -94,7 +94,7 @@ Index | Rotation
 2     | Reverse Portrait (180 degrees)
 3     | Reverse Landscape (270 degrees)
 
-## raw_touch
+## raw_touch()
 Provides the raw values from the device, without any reference to the display size. The origin is in the lower right corner. This is only used in the calibration script, but you may not want to use it.
 ```
 x, y = xpt.raw_touch()
