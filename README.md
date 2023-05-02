@@ -62,6 +62,14 @@ are fairly good. Then:
     xpt = Touch(spi, cs=cs, int_pin=int_pin)
     xpt.calibrate(xmin, xmax, ymin, ymax, width, height, orientation)
 ```
+Note that here, width is the largest value and height is the lowest one. So, independently of the orientation of the display, on the T-HMI 320 x 240 display, you have either:
+```
+xpt.calibrate(150, 1830, 150, 1830, 320, 240, 0)
+```
+or
+```
+xpt.calibrate(150, 1830, 150, 1830, 320, 240, 1)
+```
 
 ## get_touch
 Provides the x and y coordinates using the display reference. The origin is in the upper left corner.
