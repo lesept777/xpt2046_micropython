@@ -33,6 +33,7 @@ This driver is based on the original version from [rdagger](https://github.com/r
 # Methods
 First, a SPI bus must be created.
 ```
+from machine import SPI, Pin
 spi = SPI(1, baudrate=1000000)
 spi.init(sck=Pin(01), mosi=Pin(03), miso=Pin(04))
 cs = Pin(2, mode=Pin.OUT, value=1) 
