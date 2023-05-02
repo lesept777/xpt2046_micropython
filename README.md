@@ -39,7 +39,7 @@ This method can only be used after calling the `calibrate()` method. Depending o
 x, y = xpt.get_touch(True)
 ```
 
-## calibrate()
+## calibrate
 Arguments are: xmin, xmax, ymin, ymax, width, height, orientation. Use the `Calibration.py` script to get the values. On my T-HMI device, I found that
 ```
     xmin = 150
@@ -53,7 +53,7 @@ are fairly good.
 Returns `True` if the display was touched or `False` otherwise.
 
 ## set_orientation()
-Used to change the orientation of the display. Values are the same as russhugjes's:
+Used to change the orientation of the display. Argument values are the same as russhugjes's:
 
 Index | Rotation
 ----- | --------
