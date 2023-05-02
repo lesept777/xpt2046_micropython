@@ -3,7 +3,7 @@
 
 For T-HMI, use the firmware from [russhughes](https://github.com/russhughes/s3lcd/tree/c666663ea9ce005ca8271c470c389054274f0192/firmware/S3LCD_OCT_16M). 
 
-Flashing instructions: Place device into flash mode by pressing and holding the BOOT button, then press and release the RESET button and finally release the BOOT button.
+Flashing instructions: Place device into flash mode by pressing and holding the BOOT button, then press and release the RESET button and finally release the BOOT button (these are the RST and BOT switches on the side of the device, near the SD card reader).
 
 ### Erase flash
 
