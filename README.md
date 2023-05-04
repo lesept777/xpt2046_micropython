@@ -110,3 +110,5 @@ A simple example of how to use the driver. It is based on calibration values for
 ## Touch_test_interrupt.py
 Similar but using the interrupt to get the coordinates.
 
+## Simon.py
+Game of Simon: load and run it. The orientation is 0 (portrait, USB connector bottom)
