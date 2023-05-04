@@ -34,6 +34,19 @@ def animateButton(color, xc, yc, radius):
         tft.fill_circle(xc, yc, int(radius) // 2 + i, color)
         tft.show()
 
+def splashScreen():
+    tft.text(font, "Play SIMON", 45, 120, s3lcd.WHITE)
+    tft.text(font, "3", 117, 160, s3lcd.WHITE)
+    tft.show()
+    sleep(1)
+    tft.text(font, "2", 117, 160, s3lcd.WHITE)
+    tft.show()
+    sleep(1)
+    tft.text(font, "1", 117, 160, s3lcd.WHITE)
+    tft.show()
+    sleep(1)
+    tft.clear(s3lcd.BLACK)
+    
 # Display
 tft = tft_config.config(tft_config.WIDE)
 tft.init()
@@ -50,6 +63,7 @@ cs = Pin(2, mode=Pin.OUT, value=1)
 int_pin = Pin(9)
 xpt = Touch(spi, cs=cs, int_pin=int_pin, int_handler=touch_handler)
 xpt.calibrate(170, 1842, 139, 1830, 320, 240, 0)
+splashScreen()
 
 # Game variables
 colors = []
