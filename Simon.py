@@ -96,7 +96,7 @@ try:
         count = 0
         while count < len(colors):
             # Wait for button touches
-            while not xpt.is_touched():
+            while not xpt.is_touched() of t_x < 0 or t_y < 0:
                 pass
             button = -1
             # Check if it is correct
