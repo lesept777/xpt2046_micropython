@@ -26,7 +26,7 @@ On Windows:
 ```
 ./python.exe -u -m esptool --chip esp32s3 --port COM27 --baud 460800 write_flash -z 0x0 firmware.bin
 ```
-Finalyy, unplug and plug the device.
+Finally, unplug and plug the device.
 
 *This driver is based on the original version from [rdagger](https://github.com/rdagger/micropython-ili9341/blob/d080d5bac95c0da972b26e3599f56bb0311d9ebd/xpt2046.py). The calibration is quite simple (and can be improved in the future).*
 
