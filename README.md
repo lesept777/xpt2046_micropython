@@ -24,7 +24,7 @@ esptool.py --chip esp32s3 --port /dev/ttyACM0 write_flash -z 0 firmware.bin
 ```
 On Windows:
 ```
-/python.exe -u -m esptool --chip esp32s3 --port COM27 --baud 460800 write_flash -z 0x0 firmware.bin
+./python.exe -u -m esptool --chip esp32s3 --port COM27 --baud 460800 write_flash -z 0x0 firmware.bin
 ```
 Finalyy, unplug and plug the device.
 
